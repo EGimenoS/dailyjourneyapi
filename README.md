@@ -1,11 +1,11 @@
-# DailyTravel API
+# DailyJoruney API
 
 - [Introduction](#Introduction)
 - [Setup](#Setup)
 
 #### Introduction
 
-This repository contains the code for a Rails API only app that is used as the backend for my DailyTravel project.
+This repository contains the code for a Rails API only app that is used as the backend for my DailyJourney project.
 
 ### Setup
 
