@@ -1,4 +1,4 @@
-# DailyJoruney API
+# DailyJourney API
 
 - [Introduction](#Introduction)
 - [Setup](#Setup)
