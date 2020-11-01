@@ -44,5 +44,5 @@ group :test do
   gem 'shoulda-matchers', '~> 4.0'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'active_model_serializers', '~> 0.8.4'
+gem 'active_model_serializers', '~> 0.10.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

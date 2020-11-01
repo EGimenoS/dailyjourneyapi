@@ -5,5 +5,5 @@ class TravelSerializer < BaseSerializer
   has_many :participants
   has_one :origin
   has_one :destination
-  belongs_to :owner, class_name: 'user', foreign_key: 'owner_id'
+  belongs_to :user, key: :owner
 end
