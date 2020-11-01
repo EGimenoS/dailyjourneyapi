@@ -11,8 +11,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
-# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
-# gem 'jbuilder', '~> 2.7'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -45,4 +44,5 @@ group :test do
   gem 'shoulda-matchers', '~> 4.0'
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'active_model_serializers', '~> 0.8.4'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

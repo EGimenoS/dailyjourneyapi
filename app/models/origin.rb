@@ -3,4 +3,3 @@
 class Origin < ApplicationRecord
   belongs_to :travel
 end
-
