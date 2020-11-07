@@ -45,4 +45,6 @@ group :test do
 end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'figaro', '~> 1.2.0'
+gem 'rest-client', '~> 2.1.0'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
