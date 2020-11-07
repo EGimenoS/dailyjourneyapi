@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :travels, only: [:create]
+      resources :search_addresses, only: [:index]
     end
   end
 end
