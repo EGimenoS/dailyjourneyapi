@@ -13,7 +13,11 @@ module Adapter
 
     def autosuggest_addresses
       req_params = { at: @at, q: @query }
-      RestClient.get @base_url, { params: @config.merge(req_params) }
+      results = RestClient.get @base_url, { params: @config.merge(req_params) }
+      results = JSON.parse(results)
+      results['items'].map do |item|
+        { address: item['title'], lat: item['position']['lat'], long: item['position']['lng'] }
+      end
     end
 
     private
