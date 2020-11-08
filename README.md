@@ -70,7 +70,7 @@ If the sign in is successful the response contains an access token in the respon
 
 ### New Travel creation.
 
-allows an authenticated user to create a new travel.
+Allows an authenticated user to create a new travel.
 
 `POST` request to `http://localhost:3000/api/v1/travels`
 
@@ -104,9 +104,9 @@ Body:
 
 ### Autosuggest addresses
 
-`GET` request to `http://localhost:3000/api/v1/search_addresses`
-
 It receives a string as a query and suggests real addresses from the Here Maps API. It is used to make an input search with realtime suggestions to validate real addreses.
+
+`GET` request to `http://localhost:3000/api/v1/search_addresses`
 
 Query parameters:
 
