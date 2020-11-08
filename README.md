@@ -4,14 +4,14 @@
 - [Setup](#Setup)
 - [Currently working Endpoints](#Endpoints)
 
-#### Introduction
+## Introduction
 
 Work In Progress 🚧  
 This repository contains the code for a Rails API only app that is used as the backend for my DailyJourney project.
 The project goal is to put people in contact in order to share their cars for their daily tavels, such as commuting to go to their workplace.
 This project also has a frontend made witn Angular 10 (WIP). [DailyJourney Frontend](https://github.com/egimenos/dailyjourney)
 
-#### Setup and Installation
+## Setup and Installation
 
 The project it's being built with these tools:
 
@@ -30,7 +30,7 @@ The app needs a Here Maps apikey to work since it uses their Geocoding and Searc
 
 Once you get your key, set it as an ENV variable. You can use for instance the figaro gem bundled with this project gemfile, run `bundle exec figaro install` to generate an `application.yml` file and add a new key with a here_maps_api_key and the value of your new key.
 
-#### Endpoints
+## Endpoints
 
 > Asuming your are running your app in `http://localhost:3000`
 
