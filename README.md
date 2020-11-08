@@ -2,6 +2,7 @@
 
 - [Introduction](#Introduction)
 - [Setup](#Setup)
+- [Currently working Endpoints](#Currently working endpoints)
 
 #### Introduction
 
