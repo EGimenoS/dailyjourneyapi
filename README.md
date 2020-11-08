@@ -1,13 +1,132 @@
-# DailyJourney API
+# DailyJourney API 🚗
 
 - [Introduction](#Introduction)
 - [Setup](#Setup)
 
 #### Introduction
 
+Work In Progress 🚧  
 This repository contains the code for a Rails API only app that is used as the backend for my DailyJourney project.
+The project goal is to put poeple in contact in order to share their cars for the daily tavels, such as commuting to go to their workplace.
+This project also has a frontend made witn Angular 10 (WIP). [DailyJourney Frontend](https://github.com/egimenos/dailyjourney)
 
-### Setup
+### Setup and Installation
+
+The project it's being built with this tools:
 
 - Ruby version `2.7.1`
 - Rails version `6.03`
+- PostgreSQL 12
+
+1. You need to make sure that the tools are properly installed in your system. The steps to follow are different depending on your system but you can find great guides for all of them in the guides section of GoRails, by Chris Oliver: https://gorails.com/setup/
+2. Once the tools are installed, clone the repo `git clone https://github.com/EGimenoS/dailyjourneyapi.git`
+3. Move to the project root folder and install the dependencies by using `bundle install`
+4. Create the database: `rails db:migrate`
+5. Run the database migration: `rails db:migrate`
+
+The app needs a Here Maps apikey to work since it used their Geocoding and Search REST API v7. More instructions: https://developer.here.com/documentation/geocoding-search-api/dev_guide/index.html.
+
+Once you get your key, set it as a ENV variable. You can use for instance the figaro gem bundled with this project gemfile, run `bundle exec figaro install` to generate an `application.yml file` and add a new key with a here_maps_api_key and the value of your new key.
+
+### Currently working endpoints
+
+Asuming your are running your app in `http://localhost:3000`
+
+### User creation
+
+Creates a new user.
+
+`POST` request to `http://localhost:3000/users/sign_up`
+
+Headers: `Content-Type: application/json`
+
+Body:
+
+```
+ { "email": "testuser@test.com",
+	"password": "testpassword" ,
+	"password_confirmation": "testpassword",
+	"name": "Test User" }
+```
+
+If the sign up is successful the response contains an access token in the response header that needs to be included later in the header of all the requests made against protected resources.
+
+### User login
+
+Signs in an existing user
+
+`POST` request to `http://localhost:3000/users/sign_in`
+
+Headers: `Content-Type: application/json`
+
+Body:
+
+```
+ { "email": "testuser@test.com",
+	"password": "testpassword"  }
+```
+
+If the sign in is successful the response contains an access token in the response header that needs to be included later in the header of all the requests made against protected resources.
+
+### New Travel creation.
+
+allows an authenticated user to create a new travel.
+
+`POST` request to `http://localhost:3000/api/v1/travels`
+
+Headers:
+
+```
+Content-Type: application/json
+Authorization: Bearer yourjwtfromthesigninrequest
+```
+
+Body:
+
+```
+{
+	"capacity": 3,
+	"owner_comment": "Lorem Ipsum",
+	"departure_time": "2015-11-05 22:32:03",
+	"origin_attributes": {
+		"address": "Foo street n23",
+		"longitude": "1",
+		"latitude": "2"
+	},
+	"destination_attributes": {
+		"address": "Bar Boulevard 25",
+		"longitude": "2",
+		"latitude": "1"
+	}
+}
+
+```
+
+### Autosuggest addresses
+
+`GET` request to `http://localhost:3000/api/v1/search_addresses`
+
+It receives a string as a query and suggests real addresses from the Here Maps API. It is used to make an input search with realtime suggestions to validate real addreses.
+
+Query parameters:
+
+```
+q: query string to lookup
+at: Specifies the center of the search context. Format: {latitude},{longitude}
+```
+
+Example: `http://localhost:3000/api/v1/search_addresses?at=39.48728,-0.36593&q=lagranja%201%20almusafes`
+
+Response:
+
+It returns an array with several items that might match the query, including the proper address and the latitude and longitude values.
+
+```
+[
+  {
+    "address": "Calle La Granja, 1, 46440 Almussafes (Valencia), España",
+    "lat": 39.30864,
+    "long": -0.41938
+  }
+]
+```
