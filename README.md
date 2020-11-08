@@ -23,14 +23,15 @@ The project it's being built with this tools:
 3. Move to the project root folder and install the dependencies by using `bundle install`
 4. Create the database: `rails db:migrate`
 5. Run the database migration: `rails db:migrate`
+6. Start your development server `rails s`
 
-The app needs a Here Maps apikey to work since it used their Geocoding and Search REST API v7. More instructions: https://developer.here.com/documentation/geocoding-search-api/dev_guide/index.html.
+The app needs a Here Maps apikey to work since it uses their Geocoding and Search REST API v7. You can get a key for free with a generous free tier. More instructions: https://developer.here.com/documentation/geocoding-search-api/dev_guide/index.html.
 
 Once you get your key, set it as a ENV variable. You can use for instance the figaro gem bundled with this project gemfile, run `bundle exec figaro install` to generate an `application.yml file` and add a new key with a here_maps_api_key and the value of your new key.
 
 ### Currently working endpoints
 
-Asuming your are running your app in `http://localhost:3000`
+> Asuming your are running your app in `http://localhost:3000`
 
 ### User creation
 
@@ -49,7 +50,7 @@ Body:
 	"name": "Test User" }
 ```
 
-If the sign up is successful the response contains an access token in the response header that needs to be included later in the header of all the requests made against protected resources.
+If the sign up is successful the response contains an access token in the response header that needs to be included later in the header of all the requests made against any protected resources.
 
 ### User login
 
