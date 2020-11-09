@@ -8,7 +8,7 @@
 
 Work In Progress 🚧  
 This repository contains the code for a Rails API only app that is used as the backend for my DailyJourney project.
-The project goal is to put people in contact in order to share their cars for their daily tavels, such as commuting to go to their workplace.
+The project goal is to put people in contact in order to share their cars for their daily travels, such as commuting to go to their workplace.
 This project also has a frontend made witn Angular 10 (WIP). [DailyJourney Frontend](https://github.com/egimenos/dailyjourney)
 
 ## Setup and Installation
@@ -106,7 +106,7 @@ Body:
 
 ### Autosuggest addresses
 
-It receives a string as a query and suggests real addresses from the Here Maps API. It is used to make an input search with realtime suggestions to validate real addreses.
+It receives a string as a query and suggests real addresses from the Here Maps API. It is used to implement an input search with suggestions to validate real addreses and provide longitude and latitude values.
 
 `GET` request to `http://localhost:3000/api/v1/search_addresses`
 
