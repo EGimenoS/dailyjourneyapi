@@ -2,23 +2,24 @@
 
 - [Introduction](#Introduction)
 - [Setup](#Setup)
+- [Currently working Endpoints](#Endpoints)
 
-#### Introduction
+## Introduction
 
 Work In Progress 🚧  
 This repository contains the code for a Rails API only app that is used as the backend for my DailyJourney project.
-The project goal is to put poeple in contact in order to share their cars for the daily tavels, such as commuting to go to their workplace.
+The project goal is to put people in contact in order to share their cars for their daily travels, such as commuting to go to their workplace.
 This project also has a frontend made witn Angular 10 (WIP). [DailyJourney Frontend](https://github.com/egimenos/dailyjourney)
 
-### Setup and Installation
+## Setup and Installation
 
-The project it's being built with this tools:
+The project it's being built with these tools:
 
 - Ruby version `2.7.1`
 - Rails version `6.03`
 - PostgreSQL 12
 
-1. You need to make sure that the tools are properly installed in your system. The steps to follow are different depending on your system but you can find great guides for all of them in the guides section of GoRails, by Chris Oliver: https://gorails.com/setup/
+1. You need to make sure that the tools are properly installed in your system. The steps to follow are different depending on your system but you can find great guides for all of them in the guides section of GoRails, by Chris Oliver, just select your operating system: https://gorails.com/setup/
 2. Once the tools are installed, clone the repo `git clone https://github.com/EGimenoS/dailyjourneyapi.git`
 3. Move to the project root folder and install the dependencies by using `bundle install`
 4. Create the database: `rails db:migrate`
@@ -27,9 +28,9 @@ The project it's being built with this tools:
 
 The app needs a Here Maps apikey to work since it uses their Geocoding and Search REST API v7. You can get a key for free with a generous free tier. More instructions: https://developer.here.com/documentation/geocoding-search-api/dev_guide/index.html.
 
-Once you get your key, set it as a ENV variable. You can use for instance the figaro gem bundled with this project gemfile, run `bundle exec figaro install` to generate an `application.yml file` and add a new key with a here_maps_api_key and the value of your new key.
+Once you get your key, set it as an ENV variable. You can use for instance the figaro gem bundled with this project gemfile, run `bundle exec figaro install` to generate an `application.yml` file and add a new key with a here_maps_api_key and the value of your new key.
 
-### Currently working endpoints
+## Endpoints
 
 > Asuming your are running your app in `http://localhost:3000`
 
@@ -105,7 +106,7 @@ Body:
 
 ### Autosuggest addresses
 
-It receives a string as a query and suggests real addresses from the Here Maps API. It is used to make an input search with realtime suggestions to validate real addreses.
+It receives a string as a query and suggests real addresses from the Here Maps API. It is used to implement an input search with suggestions to validate real addreses and provide longitude and latitude values.
 
 `GET` request to `http://localhost:3000/api/v1/search_addresses`
 
