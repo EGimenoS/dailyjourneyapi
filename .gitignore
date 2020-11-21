@@ -28,3 +28,6 @@
 
 # Ignore application configuration
 /config/application.yml
+
+# directory to save some SQL queries needed for development
+/psql_queries

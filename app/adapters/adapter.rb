@@ -16,7 +16,7 @@ module Adapter
       results = RestClient.get @base_url, { params: @config.merge(req_params) }
       results = JSON.parse(results)
       results['items'].map do |item|
-        { address: item['title'], lat: item['position']['lat'], long: item['position']['lng'] }
+        { address: item['title'], latitude: item['position']['lat'], longitude: item['position']['lng'] }
       end
     end
 
