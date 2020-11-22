@@ -30,7 +30,7 @@ The app needs a Here Maps apikey to work since it uses their Geocoding and Searc
 
 Once you get your key, set it as an ENV variable. You can use for instance the figaro gem bundled with this project gemfile, run `bundle exec figaro install` to generate an `application.yml` file and add a new key with a here_maps_api_key and the value of your new key.
 
-If you prefer to use a different provider than Here, add your own adapter to the Adapter module.
+If you prefer to use a different provider than Here, add your own adapter to the Adapter module `app/adapters/adapter`
 
 ### Seeding the database.
 
