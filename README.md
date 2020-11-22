@@ -22,7 +22,7 @@ The project it's being built with these tools:
 1. You need to make sure that the tools are properly installed in your system. The steps to follow are different depending on your system but you can find great guides for all of them in the guides section of GoRails, by Chris Oliver, just select your operating system: https://gorails.com/setup/
 2. Once the tools are installed, clone the repo `git clone https://github.com/EGimenoS/dailyjourneyapi.git`
 3. Move to the project root folder and install the dependencies by using `bundle install`
-4. Create the database: `rails db:migrate`
+4. Create the database: `rails db:createe`
 5. Run the database migration: `rails db:migrate`
 6. Start your development server `rails s`
 
@@ -30,9 +30,11 @@ The app needs a Here Maps apikey to work since it uses their Geocoding and Searc
 
 Once you get your key, set it as an ENV variable. You can use for instance the figaro gem bundled with this project gemfile, run `bundle exec figaro install` to generate an `application.yml` file and add a new key with a here_maps_api_key and the value of your new key.
 
+If you prefer to use a different provider than Here, add your own adapter to the Adapter module.
+
 ### Seeding the database.
 
-To generate seed data the Faker gem along with Geocoder is used. You can directly run `rails db:seed` to seed the data or modify the file `./db/seeds.rb` to adjust the seed configuration.
+To generate consistent seed data the Faker gem along with Geocoder is used. You can directly run `rails db:seed` to seed the data or modify the file `./db/seeds.rb` to adjust the seed configuration.
 
 ## Endpoints
 

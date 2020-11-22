@@ -10,4 +10,8 @@ class Travel < ApplicationRecord
   has_one :origin,  dependent: :destroy
   has_one :destination,  dependent: :destroy
   accepts_nested_attributes_for :origin, :destination
+
+  scope :near_of, ->(target_lat, target_lng) { joins(:destination).merge(Destination.near([target_lat, target_lng], 3)) }
+
+  Travel.includes(:destinations).limit(3)
 end
