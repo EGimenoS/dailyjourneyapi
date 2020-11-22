@@ -13,6 +13,8 @@ class Api::V1::TravelsController < Api::V1::BaseController
     end
   end
 
+  def index; end
+
   def travel_params
     params.require(:travel).permit(:departure_time, :owner_comment, :capacity, origin_attributes: %i[longitude latitude id address],
                                                                                destination_attributes: %i[longitude latitude id address])

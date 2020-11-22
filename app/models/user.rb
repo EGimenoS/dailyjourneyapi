@@ -7,6 +7,6 @@ class User < ApplicationRecord
   validates_presence_of :name, on: :create
 
   def jwt_token_payload
-    { name: name }
+    { name: name, avatar: avatar }
   end
 end
