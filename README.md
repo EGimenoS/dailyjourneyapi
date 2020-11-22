@@ -138,3 +138,79 @@ It returns an array with several items that might match the query, including the
   }
 ]
 ```
+
+### Travels near of destination target
+
+It receives the desired position as params destination_latitude and destination_longitude and it returns the travels that are closer than 3 km. (TODO: Accepting an additional param to change the reference distamce)
+
+`GET` request to http://localhost:3000/api/v1/travels?destination_latitude=39.31232&destination_longitude=-0.42108
+
+Query parameters:
+
+```
+destination_latitude
+destination_longitude
+```
+
+Example: `http://localhost:3000/api/v1/travels?destination_latitude=39.31232&destination_longitude=-0.42108`
+
+Response:
+
+It returns an array with several items:
+
+```
+[
+  {
+    "id": 11,
+    "departure_time": "2020-11-22T08:30:00.000Z",
+    "owner_comment": "Carmen auditor capio. Creber ex voluptatum.",
+    "capacity": 2,
+    "distance": 1.390576630103044,
+    "bearing": "78.828832034937",
+    "participants": [],
+    "origin": {
+      "id": 11,
+      "address": "Soternes, Valencia, Valencian Community, Spain",
+      "longitude": -0.40775859205660137,
+      "latitude": 39.47223605390643
+    },
+    "destination": {
+      "id": 11,
+      "address": "Sollana, Valencian Community, Spain",
+      "longitude": -0.40541829799190726,
+      "latitude": 39.315412911138644
+    },
+    "owner": {
+      "id": 61,
+      "name": "Delila Sipes"
+    }
+  },
+  {
+    "id": 204,
+    "departure_time": "2020-11-22T08:30:00.000Z",
+    "owner_comment": "Velum capto viridis. Super amicitia careo.",
+    "capacity": 2,
+    "distance": 1.4450541568955952,
+    "bearing": "55.779401482529",
+    "participants": [],
+    "origin": {
+      "id": 204,
+      "address": "Valencia, Valencian Community, Spain",
+      "longitude": -0.3782611654945231,
+      "latitude": 39.514978074025706
+    },
+    "destination": {
+      "id": 204,
+      "address": "Almussafes, Valencian Community, Spain",
+      "longitude": -0.40846410588051923,
+      "latitude": 39.320900384745485
+    },
+    "owner": {
+      "id": 54,
+      "name": "Preston Von"
+    }
+  },
+
+	....
+
+```
