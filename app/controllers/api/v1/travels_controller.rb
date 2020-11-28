@@ -18,6 +18,11 @@ class Api::V1::TravelsController < Api::V1::BaseController
     render_object(travels, :ok)
   end
 
+  def show
+    travel = Travel.find(params[:id])
+    render json: travel, status: :ok, serializer: TravelDetailSerializer
+  end
+
   def travel_params
     params.require(:travel).permit(:departure_time, :owner_comment, :capacity, origin_attributes: %i[longitude latitude id address],
                                                                                destination_attributes: %i[longitude latitude id address])

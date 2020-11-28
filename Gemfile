@@ -45,11 +45,11 @@ group :test do
 end
 # Added by me
 gem 'active_model_serializers', '~> 0.10.0'
+gem 'awesome_print', '~> 1.8.0'
 gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master'
 gem 'figaro', '~> 1.2.0'
 gem 'geocoder', '~> 1.6.4'
 gem 'rest-client', '~> 2.1.0'
-gem 'awesome_print', '~> 1.8.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
