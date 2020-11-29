@@ -4,7 +4,6 @@ class Api::V1::TravelsController < Api::V1::BaseController
   before_action :authenticate_and_set_user, only: %i[create update]
 
   def create
-    puts current_user.name
     travel = current_user.travels.build(travel_params)
     if travel.save
       render_object(travel, :created)
