@@ -1,0 +1,22 @@
+es:
+  api_guard:
+    authentication:
+      signed_in: "Logueado con éxito"
+      signed_out: "Deslogueado con éxito"
+      invalid_login_credentials: "Usuario o contraseña son incorrectos"
+    password:
+      changed: "El pasword cambió con éxito"
+    registration:
+      signed_up: "Registrado con éxito"
+      account_deleted: "Cuenta borrada con éxito"
+    access_token:
+      refreshed: "Token refrescado con éxito"
+      missing: "El token de acceso no se encuentra en la petición"
+      invalid: "Token de acceso no válido"
+      expired: "Token de acceso expirado"
+    refresh_token:
+      invalid: "token de refresco inválido"
+      missing: "toke de refresco no está presente en la petición"
+    response:
+      success: "éxito"
+      error: "error"
