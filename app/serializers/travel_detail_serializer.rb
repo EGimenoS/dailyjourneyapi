@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class TravelDetailSerializer < BaseSerializer
-  attributes :departure_time, :owner_comment, :capacity
+  attributes :departure_time, :owner_comment, :capacity, :periodicity
   has_many :participants
   has_one :origin
   has_one :destination
