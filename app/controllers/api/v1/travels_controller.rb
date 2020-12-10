@@ -6,7 +6,7 @@ class Api::V1::TravelsController < Api::V1::BaseController
   def create
     travel = current_user.travels.build(travel_params)
     if travel.save
-      render_object(travel, :created)
+      render json: travel, status: :ok, serializer: TravelDetailSerializer
     else
       render_errors(travel.errors)
     end
