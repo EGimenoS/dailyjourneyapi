@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :chat_messages
   api_guard_routes for: 'users', controller: {
     registration: 'users/registration',
     authentication: 'users/authentication',
@@ -13,6 +12,7 @@ Rails.application.routes.draw do
       resources :travels, only: %i[create index show]
       resources :search_addresses, only: [:index]
       resources :chat_messages, only: %i[create index]
+      resources :participants
     end
   end
 end
