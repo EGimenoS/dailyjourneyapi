@@ -22,6 +22,8 @@ class Api::V1::TravelsController < Api::V1::BaseController
     render json: travel, status: :ok, serializer: TravelDetailSerializer
   end
 
+  private
+
   def travel_params
     params.require(:travel).permit(:departure_time, :periodicity, :owner_comment, :capacity, origin_attributes: %i[longitude latitude id address],
                                                                                              destination_attributes: %i[longitude latitude id address])
