@@ -21,8 +21,11 @@ class Api::V1::ParticipantsController < Api::V1::BaseController
   end
 
   def destroy
-    @participant.destroy
-    head 204
+    if @participant.destroy
+      head 204
+    else
+      render_errors(@participant)
+    end
   end
 
   private
