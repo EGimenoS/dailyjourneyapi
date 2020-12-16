@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       resources :search_addresses, only: [:index]
       resources :chat_messages, only: %i[create index]
       resources :participants
+      resources :profile_travels, only: [:index]
     end
   end
 end
