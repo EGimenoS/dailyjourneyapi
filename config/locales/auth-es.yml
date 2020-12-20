@@ -12,11 +12,11 @@ es:
     access_token:
       refreshed: "Token refrescado con éxito"
       missing: "El token de acceso no se encuentra en la petición"
-      invalid: "Token de acceso no válido"
+      invalid: "Necesita entrar en el sistema"
       expired: "Token de acceso expirado"
     refresh_token:
       invalid: "token de refresco inválido"
-      missing: "toke de refresco no está presente en la petición"
+      missing: "token de refresco no está presente en la petición"
     response:
       success: "éxito"
       error: "error"
