@@ -2,7 +2,7 @@
 
 class Api::V1::TravelsController < Api::V1::BaseController
   before_action :authenticate_and_set_user, only: %i[create update destroy]
-  before_action :set_travel
+  before_action :set_travel, only: %i[update destroy]
 
   def create
     travel = current_user.travels.build(travel_params)
