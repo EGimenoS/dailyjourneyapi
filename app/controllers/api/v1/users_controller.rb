@@ -8,7 +8,8 @@ class Api::V1::UsersController < Api::V1::BaseController
 
   def update
     if current_user.update(user_params)
-      render_object(current_user, :ok)
+      create_token_and_set_header(current_user, User)
+      render_success(message: I18n.t('api_guard.registration.signed_up'))
     else
       render_errors(current_user)
     end
