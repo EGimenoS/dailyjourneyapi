@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :travels
+      resources :users, only: [:update]
       resources :search_addresses, only: [:index]
       resources :chat_messages, only: %i[create index]
       resources :participants
