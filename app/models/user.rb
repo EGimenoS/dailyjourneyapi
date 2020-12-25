@@ -2,6 +2,7 @@
 
 class User < ApplicationRecord
   after_update :set_user_gravatar
+  after_create :set_user_gravatar
   has_many :travels, foreign_key: :owner_id, class_name: 'Travel', dependent: :destroy
   has_many :chat_messages, dependent: :destroy
   has_many :participants, dependent: :destroy
