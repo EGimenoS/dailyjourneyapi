@@ -16,6 +16,6 @@ class User < ApplicationRecord
 
   def set_user_gravatar
     gravatar_id = Digest::MD5.hexdigest(email.downcase)
-    update_columns(avatar: "http://secure.gravatar.com/avatar/#{gravatar_id}?s=32&d=https%3A%2F%2Fui-avatars.com%2Fapi%2F/#{name}/128")
+    update_columns(avatar: "https://secure.gravatar.com/avatar/#{gravatar_id}?s=32&d=https%3A%2F%2Fui-avatars.com%2Fapi%2F/#{name}/128")
   end
 end

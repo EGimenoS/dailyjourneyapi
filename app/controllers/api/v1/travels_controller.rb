@@ -3,6 +3,7 @@
 class Api::V1::TravelsController < Api::V1::BaseController
   before_action :authenticate_and_set_user, only: %i[create update destroy]
   before_action :set_travel, only: %i[update destroy]
+  before_action :require_authorized_for_current_travel, only: %i[destroy update]
 
   def create
     travel = current_user.travels.build(travel_params)
@@ -43,6 +44,10 @@ class Api::V1::TravelsController < Api::V1::BaseController
 
   def set_travel
     @travel = Travel.find(params[:id])
+  end
+
+  def require_authorized_for_current_travel
+    render json: { error: 'Acceso no autorizado' }, status: :unauthorized if @travel.owner_id != current_user.id
   end
 
   def travel_params

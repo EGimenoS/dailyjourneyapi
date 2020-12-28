@@ -5,7 +5,7 @@ es:
       signed_out: "Deslogueado con éxito"
       invalid_login_credentials: "Usuario o contraseña son incorrectos"
     password:
-      changed: "El pasword cambió con éxito"
+      changed: "El password cambió con éxito"
     registration:
       signed_up: "Registrado con éxito"
       account_deleted: "Cuenta borrada con éxito"
@@ -13,7 +13,7 @@ es:
       refreshed: "Token refrescado con éxito"
       missing: "El token de acceso no se encuentra en la petición"
       invalid: "Necesita entrar en el sistema"
-      expired: "Token de acceso expirado"
+      expired: "Acceso expirado, debe loguearse de nuevo"
     refresh_token:
       invalid: "token de refresco inválido"
       missing: "token de refresco no está presente en la petición"
