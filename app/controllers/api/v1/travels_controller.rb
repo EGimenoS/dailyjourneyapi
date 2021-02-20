@@ -2,7 +2,7 @@
 
 class Api::V1::TravelsController < Api::V1::BaseController
   before_action :authenticate_and_set_user, only: %i[create update destroy]
-  before_action :set_travel, only: %i[update destroy]
+  before_action :set_travel, only: %i[update destroy show]
   before_action :require_authorized_for_current_travel, only: %i[destroy update]
 
   def create
@@ -20,8 +20,7 @@ class Api::V1::TravelsController < Api::V1::BaseController
   end
 
   def show
-    travel = Travel.find(params[:id])
-    render json: travel, status: :ok, serializer: TravelDetailSerializer
+    render json: @travel, status: :ok, serializer: TravelDetailSerializer
   end
 
   def update
