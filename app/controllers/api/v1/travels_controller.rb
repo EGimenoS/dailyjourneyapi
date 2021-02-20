@@ -15,7 +15,7 @@ class Api::V1::TravelsController < Api::V1::BaseController
   end
 
   def index
-    travels = Travel.includes(:destination).near_of(params[:destination_latitude], params[:destination_longitude])
+    travels = Travel.includes(:destination).near_of(params[:destination_latitude], params[:destination_longitude], params[:distance] || 3) # default distance 3km
     render_object(travels, :ok)
   end
 
