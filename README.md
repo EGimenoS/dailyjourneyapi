@@ -8,7 +8,7 @@
 
 This is my Master's Dissertation app for the "Master in web applications development" of the UOC (Universitat Oberta de Catalunya).
 The project goal is to put people in contact in order to share their cars for their daily travels, such as commuting to go to their workplaces.
-This repository contains the backend part of the application, a ruby On Rails api-only app. There is also a full-fledged frontend SPA made with Angular mode that can be found here: DailyJourney. [DailyJourney Frontend](https://github.com/egimenos/dailyjourney)
+This repository contains the backend part of the application, a Ruby On Rails api-only app. There is also a  frontend SPA made with Angular that can be found here: DailyJourney. [DailyJourney Frontend](https://github.com/egimenos/dailyjourney)
 
 ## Setup and Installation
 
